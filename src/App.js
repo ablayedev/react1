@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Component1 from './components/kebe'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state ={
+    carac:[
+      {
+        'nom':'kebe',
+        'prenom':'mouhamed'
+      },
+      {
+        'nom':'abdoulaye',
+        'prenom':'diaw'
+      }
+    ]
+  }
+  render() { 
+    console.log(this.state)
+    return ( 
+      <div className="App" style={{display:'none'}}>
+        <p>VOici la liste des utilistaurs</p>
+        <Component1  moi={this.state}/>
+       </div>
+     );
+  }
 }
-
+ 
 export default App;
+
